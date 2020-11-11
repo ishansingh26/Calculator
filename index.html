@@ -4,67 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width: device-width , initial-scale:1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+<script src="js/main.js"></script>
 <title>Calculator App</title>
-<style>
-@media only screen and (min-width: 240px){
-.main-container{
-  margin: 20px auto;
-  padding: 25px;
-  width: 400px;
-  height: 400px;
-  background-color: lightgrey;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  box-shadow: 4px 0 6px grey;
-  border-radius: 8px; 
-}
-.input-box{
-  height: 40px;
-  text-align: right;
-  font-size: 22px;
-  box-shadow: inset 3px 3px 2px black;
-  border: none;
-}
-.input-box:focus{
-  box-shadow: inset 3px 3px 2px black;
-}
-.btn{
-  margin: 15px; 
-  padding: 5px;
-  width: 50px;
-  box-shadow: 0 2px 4px black;
-  font-size: large;
-}
-.btn:focus{
-  outline: none;
-  border: none;
-}
-
-}
-</style>
-
-<script>
- function myfunction(a){
-    cal.t.value = cal.t.value + a;
- }
- function result(){
-   cal.t.value = eval(cal.t.value);
- }
- function allClear(){
-   cal.t.value="";
- }
- function back(){
-   let currentVal = cal.t.value;
-   let newVal = currentVal.substr(0, currentVal.length-1);
-   cal.t.value = newVal;
- }
-</script>
 </head>
 <body>
 <form name="cal" class="form-group     main-container" autocomplete="off">
   <input type="text" name="t" class="form-control input-box"  autofocus />
   
   <div>
-    <input type="button" class="btn btn-warning" value=	&#8592; onclick="back(this.value)">
+    <button class="btn btn-warning"><i class="fas fa-long-arrow-alt-left"></i></button>
     <input type="button" class="btn btn-danger"  value="AC" onclick="allClear()"/>
     
   </div> 
@@ -72,24 +21,24 @@
     <input type="button" class="btn btn-primary" value="1" onclick="myfunction(this.value)"/>
     <input type="button" class="btn btn-primary" value="2" onclick="myfunction(this.value)">
     <input type="button"  class="btn btn-primary" value="3" onclick="myfunction(this.value)">
-    <input type="button"  class="btn btn-secondary" value="+" onclick="myfunction(this.value)">
+    <input type="button"  class="btn operator" value="+" onclick="myfunction(this.value)">
   </div>
   <div>
 	  <input type="button"  class="btn btn-primary" value="4" onclick="myfunction(this.value)">
 	  <input type="button"  class="btn btn-primary" value="5" onclick="myfunction(this.value)">
 	  <input type="button"  class="btn btn-primary" value="6" onclick="myfunction(this.value)">
-	  <input type="button"  class="btn btn-secondary" value="-" onclick="myfunction(this.value)">
+	  <input type="button"  class="btn operator" value="-" onclick="myfunction(this.value)">
     </div>
   <div>
 	  <input type="button"  class="btn btn-primary" value="7" onclick="myfunction(this.value)">
 	  <input type="button"  class="btn btn-primary" value="8" onclick="myfunction(this.value)">
 	  <input type="button"  class="btn btn-primary" value="9" onclick="myfunction(this.value)">
-	  <input type="button"  class="btn btn-secondary" value="*" onclick="myfunction(this.value)">
+	  <input type="button"  class="btn operator" value="*" onclick="myfunction(this.value)">
   </div> 
   <div>
 	  <input type="button"  class="btn btn-primary" value="0" onclick="myfunction(this.value)">
-	  <input type="button"  class="btn btn-secondary" value="%" onclick="myfunction(this.value)">
-	  <input type="button"  class="btn btn-secondary" value="/" onclick="myfunction(this.value)">
+	  <input type="button"  class="btn operator" value="%" onclick="myfunction(this.value)">
+	  <input type="button"  class="btn operator" value="/" onclick="myfunction(this.value)">
 	  <input type="button"  class="btn btn-success" value="=" onclick="result()">
   </div> 
 </form>
